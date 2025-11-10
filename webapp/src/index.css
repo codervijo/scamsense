@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cyber Shield Theme - Dark Space Aesthetic */
+    --background: 210 28% 6%;
+    --foreground: 165 40% 93%;
+
+    --card: 215 35% 9%;
+    --card-foreground: 165 40% 93%;
+
+    --popover: 215 35% 9%;
+    --popover-foreground: 165 40% 93%;
+
+    --primary: 160 100% 48%;
+    --primary-foreground: 210 28% 6%;
+
+    --secondary: 188 100% 48%;
+    --secondary-foreground: 210 28% 6%;
+
+    --muted: 215 30% 12%;
+    --muted-foreground: 165 20% 66%;
+
+    --accent: 160 100% 48%;
+    --accent-foreground: 210 28% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 165 40% 93%;
+
+    --border: 215 30% 15%;
+    --input: 215 30% 12%;
+    --ring: 160 100% 48%;
+
+    --radius: 0.875rem;
+
+    /* Custom Cyber Theme Tokens */
+    --surface-elevated: 215 35% 11%;
+    --glow-primary: 160 100% 48%;
+    --glow-secondary: 188 100% 48%;
+    --text-subtle: 165 20% 66%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 100% 48%), hsl(188 100% 48%));
+    --gradient-radial: radial-gradient(circle at center, hsl(160 100% 48% / 0.15), transparent 70%);
+    
+    /* Shadows & Glows */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 40px hsl(160 100% 48% / 0.3);
+    --shadow-glow-secondary: 0 0 40px hsl(188 100% 48% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.4);
+  }
+  
+  .glow-secondary {
+    box-shadow: 0 0 20px hsl(var(--glow-secondary) / 0.4);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 245, 160, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 245, 160, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .radial-glow {
+    background: radial-gradient(circle at center, hsl(160 100% 48% / 0.1), transparent 70%);
+  }
+}
